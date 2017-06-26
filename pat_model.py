@@ -151,7 +151,9 @@ class Session(object):
         return "session=" + str(self.session_num) + " AND level=" + str(self.level_num)
 
 def create_session(session, level):
-    data_dir = "Study Data/Session "+str(session)
+    data_dir = "%s/StudyData/Session%03d/" % (os.getcwd(), session)
+    if not os.path.exists(data_dir):
+	os.makedirs(data_dir)
     os.chdir(data_dir)
     filenames = glob.glob("optitrack*")
     os.chdir("../..")

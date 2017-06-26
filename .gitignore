@@ -8,3 +8,7 @@
 # Project-specific
 csv/
 db
+StudyData/
+
+# build files
+plugin/build
